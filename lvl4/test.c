@@ -1,26 +1,31 @@
-char *ft_itoa(int n)
+#include <unistd.h>
+
+int main(int argc, char **argv)
 {
-	unsigned int absolute;
-	int	sign;
-	int len;
-	char *string;
+	char *str;
+	char *first_word_start;
+	char *first_word_end;
 
-	if (n < 0)
-		sign = 1;
-	
-	len = absolute_len(n);
-	string = array(len);
-
-	if(!string)
-		return (NULL);
-	string[len] = '\0';
-	absolute = abs_val(n);
-	while (len--)
+	if (argv > 1)
 	{
-		string[len] = 48 + absolute % 10;
-		absolute /= 10;
+		str = argv[1];
+		while (*str == ' ' || *str == '\t')
+			str++;
+		first_word_start = str;
+		while (*str && *str != ' ' && *str != '\t')
+			str++;
+		first_word_end = str;
+		while (*str == ' ' || *str == '\t')
+			str++;
+		if (*str)
+		{
+			while (*str)
+			{
+				if (*str == ' ' || *str == '\t')
+				{
+					while (*str == ' ')
+				}
+			}
+		}
 	}
-	if (sign)
-		string[0] = '-';
-	return (string);
 }

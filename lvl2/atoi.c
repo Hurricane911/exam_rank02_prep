@@ -4,21 +4,25 @@
 
 int	ft_atoi(char *str)
 {
-	int result = 0;
+	int i = 0;
 	int sign = 1;
 
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-        	str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	while(str[i])
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		if((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+			i++;
+		else if(str[i] == '-' || str[i] == '+')
+		{
+			if(str[i] == '-')
+				sign *= -1;
+			i++;
+		}
+		else if(str[i] >= '0' && str[i] <= '9')
+		{
+			
+		}
+		i++;
 	}
-	return (sign * result);
 }
 
 int main(int argc, char **argv)
