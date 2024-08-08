@@ -2,28 +2,28 @@
 
 size_t ft_strspn(const char *str1, const char *str2)
 {
-    size_t length = 0;
+	size_t len = 0;
 
-    while (*str1)
+	while(*str1)
 	{
-        // Check if the current character in str1 is in str2
-        while (*str2) 
+		while(*str2)
 		{
-            if (*str1 == *str2)
-                break;
-            str2++;
-        }
-        
-        // If the character was not found in str2, break the loop
-        if (*str2 == '\0')
-            break;
+			if(*str1 == *str2)
+				break;
+			str2++;
+		}
+		if(*str2 == '\0')
+			break;
 
-        // Move to the next character
-        length++;
-        str1++;
-    }
-    return length;
+		str1++;
+		len++;
+	}
+	return len;
 }
+
+// Function prototype
+size_t my_strspn(const char *str1, const char *str2);
+
 int main() {
     // Test cases
     const char *test1_str1 = "whtt";
