@@ -1,31 +1,21 @@
-#include <unistd.h>
+void	sort_int_tab(int *tab, unsigned int size);
 
-int main(int argc, char **argv)
+int	main(void)
 {
-	char *str;
-	char *first_word_start;
-	char *first_word_end;
+	int num[] = {5, 3, 4, 1, 2};
+	unsigned int size = 5;
 
-	if (argv > 1)
-	{
-		str = argv[1];
-		while (*str == ' ' || *str == '\t')
-			str++;
-		first_word_start = str;
-		while (*str && *str != ' ' && *str != '\t')
-			str++;
-		first_word_end = str;
-		while (*str == ' ' || *str == '\t')
-			str++;
-		if (*str)
-		{
-			while (*str)
-			{
-				if (*str == ' ' || *str == '\t')
-				{
-					while (*str == ' ')
-				}
-			}
-		}
-	}
+	printf("Before sorting:\n");
+	for (unsigned int i = 0; i < size; i++)
+		printf("%d ", num[i]);
+	printf("\n");
+
+	sort_int_tab(num, size);
+
+	printf("After sorting:\n");
+	for (unsigned int i = 0; i < size; i++)
+		printf("%d ", num[i]);
+	printf("\n");
+
+	return 0;
 }
