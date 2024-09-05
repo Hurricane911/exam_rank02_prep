@@ -11,7 +11,7 @@ int	    is_power_of_2(unsigned int n)
 	{
 		n = n /2;
 	}
-	return 1;
+	return n == 1;
 }
 
 int main(int argc, char **argv)
